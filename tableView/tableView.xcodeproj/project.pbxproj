@@ -19,6 +19,9 @@
 		AC8EB4A322650F410033ECF7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB4A222650F410033ECF7 /* MenuViewModel.swift */; };
 		AC8EB4A92265423A0033ECF7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8EB4A82265423A0033ECF7 /* HomeViewModel.swift */; };
 		AC9DEA792265501F00A854E7 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9DEA782265501F00A854E7 /* Events.swift */; };
+		CE37CF8322658F6B00109909 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37CF8222658F6B00109909 /* RequestModel.swift */; };
+		CE37CF8522659BAC00109909 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37CF8422659BAC00109909 /* ImageCell.swift */; };
+		CE37CF8722659C5D00109909 /* NoImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE37CF8622659C5D00109909 /* NoImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		AC8EB4A222650F410033ECF7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		AC8EB4A82265423A0033ECF7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC9DEA782265501F00A854E7 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		CE37CF8222658F6B00109909 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		CE37CF8422659BAC00109909 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		CE37CF8622659C5D00109909 /* NoImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,14 +74,13 @@
 		AC8EB4832264DEE50033ECF7 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
-				AC8EB4A7226516D80033ECF7 /* MenuCell */,
 				AC8EB4A6226516B60033ECF7 /* Container */,
 				AC8EB4A5226516960033ECF7 /* Home */,
 				AC8EB4A4226516930033ECF7 /* Menu */,
 				AC8EB4842264DEE50033ECF7 /* AppDelegate.swift */,
+				AC9DEA782265501F00A854E7 /* Events.swift */,
 				AC8EB4882264DEE50033ECF7 /* Main.storyboard */,
 				AC8EB4962264E5090033ECF7 /* ImsaData.json */,
-				AC9DEA782265501F00A854E7 /* Events.swift */,
 				AC8EB48B2264DEE80033ECF7 /* Assets.xcassets */,
 				AC8EB48D2264DEE80033ECF7 /* LaunchScreen.storyboard */,
 				AC8EB4902264DEE80033ECF7 /* Info.plist */,
@@ -86,6 +91,7 @@
 		AC8EB4A4226516930033ECF7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				AC8EB4A022650D710033ECF7 /* OptionCell.swift */,
 				AC8EB49E2265091C0033ECF7 /* MenuViewController.swift */,
 				AC8EB4A222650F410033ECF7 /* MenuViewModel.swift */,
 			);
@@ -95,8 +101,11 @@
 		AC8EB4A5226516960033ECF7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CE37CF8422659BAC00109909 /* ImageCell.swift */,
+				CE37CF8622659C5D00109909 /* NoImageCell.swift */,
 				AC8EB4862264DEE50033ECF7 /* HomeViewController.swift */,
 				AC8EB4A82265423A0033ECF7 /* HomeViewModel.swift */,
+				CE37CF8222658F6B00109909 /* RequestModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -107,14 +116,6 @@
 				AC8EB49C226506890033ECF7 /* ContainerViewController.swift */,
 			);
 			path = Container;
-			sourceTree = "<group>";
-		};
-		AC8EB4A7226516D80033ECF7 /* MenuCell */ = {
-			isa = PBXGroup;
-			children = (
-				AC8EB4A022650D710033ECF7 /* OptionCell.swift */,
-			);
-			path = MenuCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +194,12 @@
 				AC8EB49D226506890033ECF7 /* ContainerViewController.swift in Sources */,
 				AC8EB4A92265423A0033ECF7 /* HomeViewModel.swift in Sources */,
 				AC8EB4A122650D710033ECF7 /* OptionCell.swift in Sources */,
+				CE37CF8522659BAC00109909 /* ImageCell.swift in Sources */,
+				CE37CF8322658F6B00109909 /* RequestModel.swift in Sources */,
 				AC9DEA792265501F00A854E7 /* Events.swift in Sources */,
 				AC8EB4852264DEE50033ECF7 /* AppDelegate.swift in Sources */,
 				AC8EB4A322650F410033ECF7 /* MenuViewModel.swift in Sources */,
+				CE37CF8722659C5D00109909 /* NoImageCell.swift in Sources */,
 				AC8EB49F2265091C0033ECF7 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

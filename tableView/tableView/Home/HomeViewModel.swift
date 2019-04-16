@@ -9,9 +9,18 @@
 import Foundation
 
 struct HomeViewModel {
-    let labelText: String
+
+    let events = RequestModel.getEventsData()
     
-    init(labelText: String) {
-        self.labelText = labelText
+    func getTitle(index: Int) -> String {
+        return events[index].name
+    }
+    
+    func getDescription(index: Int) -> String {
+        return events[index].description ?? ""
+    }
+    
+    func getImage(index: Int) -> String {
+        return events[index].image
     }
 }

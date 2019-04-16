@@ -11,8 +11,8 @@ import UIKit
 class OptionCell: UITableViewCell {
 
     @IBOutlet weak var optionLabel: UILabel!
-    
-    func configureForOption(_ option: String){
-        optionLabel.text = option
-    }
+//
+//    func configureForOption(_ option: String){
+//        optionLabel.text = option
+//    }
 }

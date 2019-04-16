@@ -33,6 +33,8 @@ class ContainerViewController: UIViewController {
         addChild(homeNavigationController)
         
         homeNavigationController.didMove(toParent: self)
+        
+        print(homeViewController.homeViewModel.events)
     }
 
 }

@@ -17,8 +17,10 @@ protocol HomeViewControllerDelegate {
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
     var delegate: HomeViewControllerDelegate!
+    var homeViewModel = HomeViewModel()
+    
+    @IBOutlet weak var eventsTableView: UITableView!
     
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
         delegate.toggleLeftPanel?()
@@ -27,9 +29,23 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: MenuViewControllerDelegate {
     func didSelectOption(_ option: String) {
-        let homeViewModel = HomeViewModel(labelText: option)
-        label.text = homeViewModel.labelText
+//        let homeViewModel = HomeViewModel(labelText: option)
         delegate.collapseSidePanels?()
     }
 }
 
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return homeViewModel.events.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let noImageCell = tableView.dequeueReusableCell(withIdentifier: "NoImageCell", for: indexPath) as! NoImageCell
+//        let imageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
+        noImageCell.eventDescription.text = homeViewModel.getDescription(index: indexPath.row)
+        noImageCell.eventTitle.text = homeViewModel.getTitle(index: indexPath.row)
+        return noImageCell
+    }
+    
+    
+}
