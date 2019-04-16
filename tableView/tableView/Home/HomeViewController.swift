@@ -31,7 +31,6 @@ extension HomeViewController: MenuViewControllerDelegate {
     func didSelectOption(_ option: Int) {
         self.option = option
         eventsTableView.reloadData()
-        print(option)
         delegate.collapseSidePanels?()
     }
 }
@@ -54,11 +53,11 @@ extension HomeViewController: UITableViewDataSource {
         
         switch option {
         case 0:
-            return noImageCell
-        case 1:
             return imageCell
+        case 1:
+            return noImageCell
         case 2:
-            if indexPath.row.isMultiple(of: 2){
+            if Int.random(in: 0...1).isMultiple(of: 2){ //indexPath.row.isMultiple(of: 2){
                 return noImageCell
             }else {
                 return imageCell

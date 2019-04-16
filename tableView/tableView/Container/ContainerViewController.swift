@@ -29,12 +29,11 @@ class ContainerViewController: UIViewController {
         homeViewController.delegate = self
         
         homeNavigationController = UINavigationController(rootViewController: homeViewController)
+        homeNavigationController.isNavigationBarHidden = true
         view.addSubview(homeNavigationController.view)
         addChild(homeNavigationController)
         
-        homeNavigationController.didMove(toParent: self)
-        
-        print(homeViewController.homeViewModel.events)
+        homeNavigationController.didMove(toParent:self)
     }
 
 }
