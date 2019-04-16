@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     var delegate: HomeViewControllerDelegate!
     var homeViewModel = HomeViewModel()
-    
+    var option = 1
     @IBOutlet weak var eventsTableView: UITableView!
     
     @IBAction func menuTapped(_ sender: UIBarButtonItem) {
@@ -28,8 +28,10 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: MenuViewControllerDelegate {
-    func didSelectOption(_ option: String) {
-//        let homeViewModel = HomeViewModel(labelText: option)
+    func didSelectOption(_ option: Int) {
+        self.option = option
+        eventsTableView.reloadData()
+        print(option)
         delegate.collapseSidePanels?()
     }
 }
@@ -41,10 +43,29 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noImageCell = tableView.dequeueReusableCell(withIdentifier: "NoImageCell", for: indexPath) as! NoImageCell
-//        let imageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
+        let imageCell = tableView.dequeueReusableCell(withIdentifier: "ImageCell", for: indexPath) as! ImageCell
+        
         noImageCell.eventDescription.text = homeViewModel.getDescription(index: indexPath.row)
         noImageCell.eventTitle.text = homeViewModel.getTitle(index: indexPath.row)
-        return noImageCell
+        
+        imageCell.eventTitle.text = homeViewModel.getTitle(index: indexPath.row)
+        imageCell.eventDescription.text = homeViewModel.getDescription(index: indexPath.row)
+        imageCell.eventImage.image = UIImage(named: homeViewModel.getImage(index: indexPath.row))
+        
+        switch option {
+        case 0:
+            return noImageCell
+        case 1:
+            return imageCell
+        case 2:
+            if indexPath.row.isMultiple(of: 2){
+                return noImageCell
+            }else {
+                return imageCell
+            }
+        default:
+            return noImageCell
+        }
     }
     
     

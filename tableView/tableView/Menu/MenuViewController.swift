@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MenuViewControllerDelegate {
-    func didSelectOption(_ option: String)
+    func didSelectOption(_ option: Int)
 }
 
 class MenuViewController: UIViewController {
@@ -38,7 +38,7 @@ extension MenuViewController: UITableViewDataSource{
 // MARK: Table View Delegate`
 extension MenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate.didSelectOption(menuViewModel.options[indexPath.row])
+        delegate.didSelectOption(indexPath.row)
     }
 }
 
